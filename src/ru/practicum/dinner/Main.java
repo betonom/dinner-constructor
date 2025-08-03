@@ -16,15 +16,18 @@ public class Main {
             printMenu();
             String command = scanner.nextLine();
 
-            switch (command) {
-                case "1":
-                    addNewDish();
-                    break;
-                case "2":
-                    generateDishCombo();
-                    break;
-                case "3":
-                    return;
+            switch(command){
+                case "1" -> addNewDish();
+
+                case "2" -> generateDishCombo();
+
+                case "3" -> System.out.println("До свидания!");
+
+                default -> System.out.println("Такой команды нет!");
+            }
+
+            if(command.equals("3")){
+                return;
             }
         }
     }
@@ -68,7 +71,7 @@ public class Main {
             nextItem = scanner.nextLine();
         }
 
-        dc.createAndPrintRandomDishCombos(numberOfCombos, dishTypes);
+        dc.printRandomDishCombos(numberOfCombos, dishTypes);
 
 
     }
